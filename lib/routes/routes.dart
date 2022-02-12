@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:guardian/common/Global.dart';
 import 'package:guardian/pages/Home.dart';
 import '../pages/Login.dart';
 
@@ -9,9 +10,13 @@ final Map<String,Function> routes={
 
 Route? onGenerateRoute (RouteSettings settings) {
   //String? 表示name为可空类型
-  final String? name = settings.name;
+  String? name = settings.name;
   //Function? 表示pageContentBuilder为可空类型
+  if(settings.name == '/' && !checkLogin()) {
+    name = '/login';
+  }
   final Function? pageContentBuilder = routes[name];
+  print("routes[name]: ${name}");
   if (pageContentBuilder != null) {
     if (settings.arguments != null) {
       final Route route = MaterialPageRoute(
@@ -25,4 +30,14 @@ Route? onGenerateRoute (RouteSettings settings) {
       return route;
     }
   }
+}
+
+bool res = false;
+
+bool checkLogin() {
+  if( res ) {
+    return true;
+  }
+  res = true;
+  return false;
 }

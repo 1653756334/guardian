@@ -9,9 +9,18 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  bool isLogin = false;
+  @override
+  void initState() {
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     ScreenAdapter.init(context);
+    // if (!isLogin) {
+    //   print("尚未登录");
+    //   Navigator.pushNamed(context, '/login');
+    // }
     return Scaffold(
       appBar: AppBar(
         title: Text("主页面"),

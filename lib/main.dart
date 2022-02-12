@@ -1,9 +1,19 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
-import 'package:guardian/pages/Home.dart';
+import 'package:flutter/services.dart';
 import 'package:guardian/routes/routes.dart';
 
+import 'common/Global.dart';
+
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
+  if (Platform.isAndroid) {
+    SystemUiOverlayStyle systemUiOverlayStyle =
+    SystemUiOverlayStyle(statusBarColor: Colors.transparent);
+    SystemChrome.setSystemUIOverlayStyle(systemUiOverlayStyle);
+  }
+  Global.init();
 }
 
 class MyApp extends StatelessWidget {
@@ -12,9 +22,10 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: HomePage(),
-      initialRoute: '/', //初始化的时候加载的路由
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      // home: HomePage(),
+      // initialRoute: '/', //初始化的时候加载的路由
       onGenerateRoute: onGenerateRoute,
     );
   }
