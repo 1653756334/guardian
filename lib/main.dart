@@ -13,7 +13,6 @@ void main() {
     SystemUiOverlayStyle(statusBarColor: Colors.transparent);
     SystemChrome.setSystemUIOverlayStyle(systemUiOverlayStyle);
   }
-  Global.init();
 }
 
 class MyApp extends StatelessWidget {
@@ -25,7 +24,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       // home: HomePage(),
-      // initialRoute: '/', //初始化的时候加载的路由
+      initialRoute: '/', //初始化的时候加载的路由
       onGenerateRoute: onGenerateRoute,
     );
   }

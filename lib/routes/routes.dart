@@ -12,9 +12,6 @@ Route? onGenerateRoute (RouteSettings settings) {
   //String? 表示name为可空类型
   String? name = settings.name;
   //Function? 表示pageContentBuilder为可空类型
-  if(settings.name == '/' && !checkLogin()) {
-    name = '/login';
-  }
   final Function? pageContentBuilder = routes[name];
   print("routes[name]: ${name}");
   if (pageContentBuilder != null) {
@@ -30,14 +27,4 @@ Route? onGenerateRoute (RouteSettings settings) {
       return route;
     }
   }
-}
-
-bool res = false;
-
-bool checkLogin() {
-  if( res ) {
-    return true;
-  }
-  res = true;
-  return false;
 }
