@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:guardian/pages/Family.dart';
+import 'package:guardian/pages/Life.dart';
+import 'package:guardian/pages/Sports.dart';
 import 'package:guardian/utils/GetColor.dart';
 import 'package:guardian/utils/ScreenAdapter.dart';
 import 'package:guardian/widgets/ProjectAppBar.dart';
+
+import 'User.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -18,12 +23,19 @@ class _HomePageState extends State<HomePage> {
     super.initState();
   }
 
-  int _selectedIndex = 0;
+  int _selectedIndex =0;
+
   List<String> paths = [
     "assets/images/run_act.png",
     "assets/images/life.png",
     "assets/images/home.png",
     "assets/images/person.png"
+  ];
+  List<Widget> pages = [
+    Sports(),
+    Life(),
+    Family(),
+    User(),
   ];
 
   @override
@@ -74,9 +86,7 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
       ),
-      body: Container(
-        child: Text("我是主页面"),
-      ),
+      body: pages[_selectedIndex],
     );
   }
 }

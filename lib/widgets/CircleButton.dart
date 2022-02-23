@@ -6,7 +6,8 @@ class CirCleButton extends StatefulWidget {
   String url;
   VoidCallback? userTap;
 
-  CirCleButton({Key? key, this.isLocal = false, required this.url, this.userTap})
+  CirCleButton(
+      {Key? key, this.isLocal = false, required this.url, this.userTap})
       : super(key: key);
 
   @override
@@ -25,9 +26,7 @@ class _CirCleButtonState extends State<CirCleButton> {
         child: CircleAvatar(
           backgroundColor: Color(0xff396ba0),
           child: widget.isLocal
-              ? Image.asset(
-                  widget.url,
-                )
+              ? Image.asset(widget.url)
               : Image.network(widget.url),
         ),
       ),

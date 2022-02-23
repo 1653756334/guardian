@@ -1,4 +1,5 @@
-import 'package:flutter/cupertino.dart';
+
+import 'package:flutter/material.dart';
 
 class User extends StatefulWidget {
   const User({Key? key}) : super(key: key);
@@ -10,6 +11,8 @@ class User extends StatefulWidget {
 class _UserState extends State<User> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Container(
+      child: Text("我是个人"),
+    );
   }
 }
