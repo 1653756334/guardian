@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:guardian/common/Global.dart';
 import 'package:guardian/pages/Home.dart';
+import 'package:guardian/pages/Pairing.dart';
 import '../pages/Login.dart';
 
 final Map<String,Function> routes={
   '/': (context) => HomePage(),
   '/login': (context) => LoginPage(),
+  '/pairing': (context) => PairingPage(),
 };
 
 Route? onGenerateRoute (RouteSettings settings) {
