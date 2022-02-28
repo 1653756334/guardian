@@ -48,6 +48,7 @@ class _SportsState extends State<Sports> {
               color: GetColorFrom("#fbfbfb"),
               borderRadius: BorderRadius.all(Radius.circular(8)),
             ),
+            // 首页界面
             child: Column(
               children: [
                 SportsItem(imgUrl: "assets/images/child.png",time:"12:12", title: "小孩跑动",),
