@@ -23,7 +23,7 @@ class _HomePageState extends State<HomePage> {
     super.initState();
   }
 
-  int _selectedIndex = 2;
+  int _selectedIndex = 0;
 
   List<String> paths = [
     "assets/images/run_act.png",
