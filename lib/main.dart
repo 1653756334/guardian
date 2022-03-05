@@ -4,8 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:guardian/routes/routes.dart';
 
-import 'common/Global.dart';
-
 void main() {
   runApp(MyApp());
   if (Platform.isAndroid) {

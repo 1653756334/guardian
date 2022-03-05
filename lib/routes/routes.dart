@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:guardian/common/Global.dart';
 import 'package:guardian/pages/Home.dart';
+import 'package:guardian/pages/SleepQuality.dart';
 import '../pages/Login.dart';
 
 final Map<String,Function> routes={
   '/': (context) => HomePage(),
   '/login': (context) => LoginPage(),
+  '/sleep': (context) => SleepQualityPage(),
 };
 
 Route? onGenerateRoute (RouteSettings settings) {

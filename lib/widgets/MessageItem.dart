@@ -23,7 +23,7 @@ class _MessageItemState extends State<MessageItem> {
       child: Container(
         width: double.infinity,
         height: ScreenAdapter.width(87),
-        padding: EdgeInsets.only(left: ScreenAdapter.width(15),),
+        padding: EdgeInsets.only(left: ScreenAdapter.width(15), right: ScreenAdapter.width(15)),
         color: GetColorFrom("#f9f9f9"),
         child: Row(
           children: [
@@ -69,9 +69,9 @@ class _MessageItemState extends State<MessageItem> {
             Expanded(
               flex: 2,
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  widget.withIcon ? Image.asset("assets/images/single.png") : Text(""),
+                  if (widget.withIcon) Image.asset("assets/images/single.png"), SizedBox(width: ScreenAdapter.width(10),),
                   Icon(Icons.arrow_forward_ios_outlined,
                     color: GetColorFrom("#8c9198"),
                   )

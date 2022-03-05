@@ -22,14 +22,26 @@ class ProjectAppBar extends StatelessWidget with PreferredSizeWidget {
       shadowColor: Colors.transparent,
       leading: Container(
         transform: Matrix4.translationValues(ScreenAdapter.width(12), 0, 0),
-        child: Row(
-          children: [
-            Icon(Icons.arrow_back_ios, color: GetColorFrom("#396ba0"),size: ScreenAdapter.width(16),),
-            Text("返回", style: TextStyle(
-              color: GetColorFrom("#396ba0"),
-              fontSize: ScreenAdapter.width(16),
-            ),)
-          ],
+        child: InkWell(
+          onTap: () {
+            Navigator.of(context).maybePop();
+          },
+          child: Row(
+            children: [
+              Icon(
+                Icons.arrow_back_ios,
+                color: GetColorFrom("#396ba0"),
+                size: ScreenAdapter.width(16),
+              ),
+              Text(
+                "返回",
+                style: TextStyle(
+                  color: GetColorFrom("#396ba0"),
+                  fontSize: ScreenAdapter.width(16),
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );
